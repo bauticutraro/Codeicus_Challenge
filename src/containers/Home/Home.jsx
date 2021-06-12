@@ -1,22 +1,22 @@
 import React from 'react';
+import { Button } from '../../components/Button/buttonStyles';
+import Input from '../../components/Input/Input';
+import ProductItem from '../../components/ProductItem/ProductItem';
 import {
   Container,
   Form,
   Title,
   FormSubcontainer,
   ProductsListTitle,
-  ProductsList,
-  ProductItem,
-  ProductItemTitle,
-  ProductItemCount,
-  InputContainer,
-  InputTitle,
-  Input,
-  Textarea,
-  Button,
-  InputError,
-  ProductStock
+  ProductsList
 } from './homeStyles';
+
+const products = [
+  { id: 1, cod: 'PROD-A', name: 'Un producto', stock: 10 },
+  { id: 2, cod: 'PROD-B', name: 'Un producto', stock: 10 },
+  { id: 3, cod: 'PROD-C', name: 'Un producto', stock: 10 },
+  { id: 4, cod: 'PROD-D', name: 'Un producto', stock: 10 }
+];
 
 const Home = () => {
   return (
@@ -26,58 +26,17 @@ const Home = () => {
       <Form>
         <FormSubcontainer>
           <ProductsListTitle>Productos</ProductsListTitle>
+
           <ProductsList>
-            <ProductItem>
-              <ProductItemTitle>Titulo del producto</ProductItemTitle>
-              <ProductItemCount
-                type='number'
-                defaultValue='0'
-                max='10'
-                min='0'
-              />
-              <ProductStock>10 en stock</ProductStock>
-            </ProductItem>
-
-            <ProductItem>
-              <ProductItemTitle>Titulo del producto</ProductItemTitle>
-              <ProductItemCount
-                type='number'
-                defaultValue='0'
-                max='10'
-                min='0'
-              />
-              <ProductStock>10 en stock</ProductStock>
-            </ProductItem>
-
-            <ProductItem>
-              <ProductItemTitle>Titulo del producto</ProductItemTitle>
-              <ProductItemCount
-                type='number'
-                defaultValue='0'
-                max='10'
-                min='0'
-              />
-              <ProductStock>10 en stock</ProductStock>
-            </ProductItem>
+            {products.map(({ id, name, stock }) => (
+              <ProductItem key={id} name={name} stock={stock} />
+            ))}
           </ProductsList>
 
-          <InputContainer>
-            <InputTitle>Nombre</InputTitle>
-            <Input />
-            <InputError>Error example</InputError>
-          </InputContainer>
-          <InputContainer>
-            <InputTitle>DNI</InputTitle>
-            <Input />
-          </InputContainer>
-          <InputContainer>
-            <InputTitle>Fecha en la que se recibe el cargamento</InputTitle>
-            <Input type='date' />
-          </InputContainer>
-          <InputContainer>
-            <InputTitle>Notas sobre el pedido</InputTitle>
-            <Textarea />
-          </InputContainer>
+          <Input title='Nombre' />
+          <Input title='DNI' />
+          <Input title='Fecha en la que se recibe el cargamento' type='date' />
+          <Input title='Notas sobre el pedido' type='textarea' />
 
           <Button>Enviar</Button>
         </FormSubcontainer>
