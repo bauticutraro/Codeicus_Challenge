@@ -4,6 +4,7 @@ import {
   Form,
   Title,
   FormSubcontainer,
+  ProductsListTitle,
   ProductsList,
   ProductItem,
   ProductItemTitle,
@@ -11,7 +12,10 @@ import {
   InputContainer,
   InputTitle,
   Input,
-  Textarea
+  Textarea,
+  Button,
+  InputError,
+  ProductStock
 } from './homeStyles';
 
 const Home = () => {
@@ -21,26 +25,46 @@ const Home = () => {
 
       <Form>
         <FormSubcontainer>
+          <ProductsListTitle>Productos</ProductsListTitle>
           <ProductsList>
             <ProductItem>
               <ProductItemTitle>Titulo del producto</ProductItemTitle>
-              <ProductItemCount type='number' />
+              <ProductItemCount
+                type='number'
+                defaultValue='0'
+                max='10'
+                min='0'
+              />
+              <ProductStock>10 en stock</ProductStock>
             </ProductItem>
 
             <ProductItem>
               <ProductItemTitle>Titulo del producto</ProductItemTitle>
-              <ProductItemCount type='number' />
+              <ProductItemCount
+                type='number'
+                defaultValue='0'
+                max='10'
+                min='0'
+              />
+              <ProductStock>10 en stock</ProductStock>
             </ProductItem>
 
             <ProductItem>
               <ProductItemTitle>Titulo del producto</ProductItemTitle>
-              <ProductItemCount type='number' />
+              <ProductItemCount
+                type='number'
+                defaultValue='0'
+                max='10'
+                min='0'
+              />
+              <ProductStock>10 en stock</ProductStock>
             </ProductItem>
           </ProductsList>
 
           <InputContainer>
             <InputTitle>Nombre</InputTitle>
             <Input />
+            <InputError>Error example</InputError>
           </InputContainer>
           <InputContainer>
             <InputTitle>DNI</InputTitle>
@@ -48,12 +72,14 @@ const Home = () => {
           </InputContainer>
           <InputContainer>
             <InputTitle>Fecha en la que se recibe el cargamento</InputTitle>
-            <Input />
+            <Input type='date' />
           </InputContainer>
           <InputContainer>
-            <InputTitle>Fecha en la que se recibe el cargamento</InputTitle>
+            <InputTitle>Notas sobre el pedido</InputTitle>
             <Textarea />
           </InputContainer>
+
+          <Button>Enviar</Button>
         </FormSubcontainer>
       </Form>
     </Container>
