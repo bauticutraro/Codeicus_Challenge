@@ -48,3 +48,8 @@ export const ProductsListTitle = styled.h3`
 export const ProductsList = styled.ul`
   list-style: none;
 `;
+
+export const TextError = styled.p`
+  margin: 0.5rem 0;
+  color: var(--danger);
+`;

@@ -17,4 +17,10 @@ export const Button = styled.button`
   :active {
     transform: scale(0.98);
   }
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.6;
+    `}
 `;

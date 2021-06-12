@@ -7,19 +7,21 @@ import {
   Textarea
 } from './inputStyles';
 
-const Input = ({ title, error, type, ...props }) => {
-  return (
-    <InputContainer>
-      <InputTitle>{title}</InputTitle>
-      {type === 'textarea' ? (
-        <Textarea {...props} />
-      ) : (
-        <InputElement {...props} type={type} />
-      )}
+const Input = React.forwardRef(
+  ({ title, error, type = 'text', ...props }, ref) => {
+    return (
+      <InputContainer>
+        <InputTitle>{title}</InputTitle>
+        {type === 'textarea' ? (
+          <Textarea {...props} ref={ref} />
+        ) : (
+          <InputElement {...props} type={type} ref={ref} />
+        )}
 
-      {error && <InputError>{error}</InputError>}
-    </InputContainer>
-  );
-};
+        {error && <InputError>{error}</InputError>}
+      </InputContainer>
+    );
+  }
+);
 
 export default Input;
