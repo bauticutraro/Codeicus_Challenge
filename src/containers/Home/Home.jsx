@@ -14,10 +14,11 @@ import {
 } from './homeStyles';
 
 const products = [
-  { id: 1, cod: 'PROD-A', name: 'Un producto', stock: 10 },
-  { id: 2, cod: 'PROD-B', name: 'Un producto', stock: 10 },
-  { id: 3, cod: 'PROD-C', name: 'Un producto', stock: 10 },
-  { id: 4, cod: 'PROD-D', name: 'Un producto', stock: 10 }
+  { id: 1, cod: 'PROD-A', name: 'Café', stock: 15 },
+  { id: 2, cod: 'PROD-B', name: 'Pepsi', stock: 10 },
+  { id: 3, cod: 'PROD-C', name: 'Agua', stock: 5 },
+  { id: 4, cod: 'PROD-D', name: 'Coca cola', stock: 0 },
+  { id: 5, cod: 'PROD-E', name: 'Sprite', stock: 4 }
 ];
 
 const Home = () => {
