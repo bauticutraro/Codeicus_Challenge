@@ -22,3 +22,7 @@ Se estima que la duracion del challenge será de 1:30hs iniciando el desarrollo 
 Se utilizo react hook form debido a que provee herramientas que ayudan a la validacion. En la funcion onSubmit (en el archivo Home.jsx) se valida si hay productos añadidos y si algun supera al stock que hay.
 
 ## Tercer Ejercicio
+
+A) Opción B
+
+B)
