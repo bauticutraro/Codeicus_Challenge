@@ -1,5 +1,10 @@
 # Codeicus Challenge
 
+## Ejecutarlo
+
+yarn
+yarn start
+
 ## Analisis previo
 
 Se implementara react (creado con vite) para resolver los ejercicios. Cada ejercicio tendra su propia rama.
